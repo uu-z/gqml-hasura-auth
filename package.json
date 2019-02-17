@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "nodemon --exec ts-node -- index.ts",
+    "build": "ncc build index.ts -o dist"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^6.2.0",
+    "gqml": "^0.5.8",
+    "jsonwebtoken": "^8.4.0"
+  },
+  "devDependencies": {
+    "ncc": "^0.3.6",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}
