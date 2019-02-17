@@ -11,5 +11,10 @@
       "src": "/(.*)",
       "dest": "index.ts"
     }
-  ]
+  ],
+  "env": {
+    "JWT_SECRET": "secret1234",
+    "HASURA_ACCESS_KEY": "@hasura-access-key",
+    "HASURA_ENDPOINT": "https://awsll.herokuapp.com/v1alpha1/graphql"
+  }
 }

@@ -21,11 +21,13 @@ ALTER TABLE ONLY public."user"
 **development**
 
 ```bash
+$ yarn install
 $ yarn start
 ```
 
 **deploy**
 
 ```bash
+$ npm install now -g
 $ now
 ```
