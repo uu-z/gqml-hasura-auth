@@ -11,3 +11,10 @@ export const H = new GraphQLClient(HASURA_ENDPOINT, {
     "X-Hasura-Access-Key": HASURA_ACCESS_KEY
   }
 });
+
+declare var process: {
+  env: {
+    HASURA_ENDPOINT: string;
+    HASURA_ACCESS_KEY: string;
+  };
+};
