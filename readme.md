@@ -3,7 +3,9 @@
 Simple Auth Server For Hasura
 
 github oauth: https://github-test.now.sh/
+
 hasura console: https://awsll.herokuapp.com/console/
+
 gqml auth server: https://gqml-hasura-auth.now.sh
 
 **Schema Definition**
