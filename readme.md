@@ -17,7 +17,7 @@ CREATE TABLE public."user" (
     name text,
     password text,
     avatar text,
-    githubUserId text,
+    "githubUserId" text,
     role text
 );
 
