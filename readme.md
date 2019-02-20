@@ -32,6 +32,7 @@ ALTER TABLE ONLY public."user"
 
 ```bash
 $ yarn install
+$ yarn gen
 $ yarn start
 ```
 
