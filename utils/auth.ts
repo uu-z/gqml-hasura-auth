@@ -1,7 +1,7 @@
 import { sign, verify } from "jsonwebtoken";
 
 interface TokenData {
-  userId: String;
+  userId: string;
 }
 
 const { APP_SECRET = "appsecret1234" } = process.env;

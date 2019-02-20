@@ -1,15 +1,25 @@
 {
   "scripts": {
     "start": "nodemon --exec ts-node -- index.ts",
-    "build": "ncc build index.ts -o dist"
+    "build": "ncc build index.ts -o dist",
+    "gen": "gql-gen --config codegen.yml"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^6.2.0",
     "gqml": "^0.5.8",
+    "graphql": "^14.1.1",
+    "graphql-code-generator": "^0.16.1",
+    "json-to-graphql-query": "^1.9.0",
     "jsonwebtoken": "^8.4.0"
   },
   "devDependencies": {
+    "graphql-codegen-introspection": "^0.16.1",
+    "graphql-codegen-typescript-client": "^0.16.1",
+    "graphql-codegen-typescript-common": "0.16.1",
+    "graphql-codegen-typescript-resolvers": "^0.16.1",
     "ncc": "^0.3.6",
     "nodemon": "^1.18.10",
     "ts-node": "^8.0.2",

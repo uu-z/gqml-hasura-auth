@@ -1,0 +1,10 @@
+overwrite: true
+schema: "https://awsll.herokuapp.com/v1alpha1/graphql"
+documents: null
+generates:
+  ./utils/generated/type.ts:
+    plugins:
+      - "typescript-common"
+  # ./graphql.schema.json:
+  #   plugins:
+  #     - "introspection"
