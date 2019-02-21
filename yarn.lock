@@ -1703,6 +1703,12 @@ graphql-codegen-typescript-resolvers@^0.16.1:
     graphql-codegen-plugin-helpers "0.16.1"
     graphql-codegen-typescript-common "0.16.1"
 
+graphql-codegen-typescript-server@^0.16.1:
+  version "0.16.1"
+  resolved "https://registry.npmjs.org/graphql-codegen-typescript-server/-/graphql-codegen-typescript-server-0.16.1.tgz#d0ddab6487a9700a4b99f867e19666936300b7d7"
+  dependencies:
+    graphql-codegen-typescript-common "0.16.1"
+
 graphql-config@2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/graphql-config/-/graphql-config-2.2.1.tgz#5fd0ec77ac7428ca5fb2026cf131be10151a0cb2"

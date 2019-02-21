@@ -1,13 +1,8 @@
-import { gql } from "gqml";
 import { H } from "./";
-import { UserBoolExp, UserInsertInput } from "./generated/type";
+import { InsertUserMutationRootArgs, UserQueryRootArgs, User, UserMutationResponse } from "./generated/type";
 import { jsonToGraphQLQuery } from "json-to-graphql-query";
 
-interface UserFindInput {
-  where: UserBoolExp;
-}
-
-export const user = (data: UserFindInput) =>
+export const user = (data: UserQueryRootArgs): Promise<User[]> =>
   H.request(
     jsonToGraphQLQuery({
       query: {
@@ -18,13 +13,9 @@ export const user = (data: UserFindInput) =>
         }
       }
     })
-  ).then((data: any) => data.user[0]);
+  ).then((data: any) => data.user);
 
-interface UserCreateInput {
-  objects: UserInsertInput[];
-}
-
-export const insertUser = (data: UserCreateInput) =>
+export const insertUser = (data: InsertUserMutationRootArgs): Promise<User[]> =>
   H.request(
     jsonToGraphQLQuery({
       mutation: {
@@ -36,4 +27,4 @@ export const insertUser = (data: UserCreateInput) =>
         }
       }
     })
-  ).then((data: any) => data.insert_user.returning[0]);
+  ).then((data: any) => data.insert_user.returning);

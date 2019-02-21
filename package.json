@@ -20,6 +20,7 @@
     "graphql-codegen-typescript-client": "^0.16.1",
     "graphql-codegen-typescript-common": "0.16.1",
     "graphql-codegen-typescript-resolvers": "^0.16.1",
+    "graphql-codegen-typescript-server": "^0.16.1",
     "ncc": "^0.3.6",
     "nodemon": "^1.18.10",
     "ts-node": "^8.0.2",

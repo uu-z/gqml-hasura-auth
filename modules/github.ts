@@ -14,7 +14,7 @@ gqml.yoga({
       authenticate_github: async (parent, { code }, ctx, info) => {
         const githubToken = await getGithubToken(code);
         const githubUser = await getGithubUser(githubToken);
-        let user = await G.user({
+        let [user] = await G.user({
           where: {
             githubUserId: {
               _eq: `${githubUser.id}`
@@ -22,7 +22,7 @@ gqml.yoga({
           }
         });
         if (!user) {
-          user = await G.insertUser({
+          [user] = await G.insertUser({
             objects: [
               {
                 name: githubUser.name,
@@ -34,6 +34,7 @@ gqml.yoga({
           });
         }
         return {
+          user,
           token: signToken(user)
         };
       }

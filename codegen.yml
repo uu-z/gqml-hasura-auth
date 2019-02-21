@@ -5,6 +5,7 @@ generates:
   ./utils/generated/type.ts:
     plugins:
       - "typescript-common"
+      - "typescript-server"
   # ./graphql.schema.json:
   #   plugins:
   #     - "introspection"

@@ -26,14 +26,15 @@ gqml.yoga({
     }
 
     type AuthPayload {
-      token: String
+      user: User!
+      token: String!
     }
   `,
   resolvers: {
     Query: {
       me: async (parent, args, ctx) => {
         const { userId } = getTokenData(ctx);
-        const user = await G.user({
+        const [user] = await G.user({
           where: {
             id: {
               _eq: userId
@@ -46,15 +47,16 @@ gqml.yoga({
     Mutation: {
       signup: async (parent, { email, password }) => {
         const hashedPassword = await hashPwd(password);
-        const user = await G.insertUser({
+        const [user] = await G.insertUser({
           objects: [{ email, password: hashedPassword }]
         });
         return {
+          user,
           token: signToken(user)
         };
       },
       login: async (parent, { email, password }) => {
-        const user = await G.user({
+        const [user] = await G.user({
           where: {
             email: {
               _eq: email
@@ -65,6 +67,7 @@ gqml.yoga({
         const validPwd = await comparePwd(password, user.password);
         if (!validPwd) throw new Error("Invalid password.");
         return {
+          user,
           token: signToken(user)
         };
       }
